@@ -7,7 +7,7 @@
  * 然後使用 export const content = { ... } 匯出。
  * =========================================================================
  */
-const content = {
+export const content = {
   en: {
     role: "Technical Product Owner",
     nav: { overview: "Overview", projects: "System & Tech", design: "UX & Design" },
@@ -68,8 +68,7 @@ const content = {
     desc: "I believe in \"Comfortable Data\". My goal is to make complex information approachable through whitespace and visual hierarchy.",
     legacy: { title: "Legacy Design", sub: "Too many borders, dense text", desc: "Typical engineer-made dashboard. Functional but intimidating." },
     soft: { title: "My Approach (Soft Tech)", sub: "Card layout & Breathing room", desc: "Prioritizing cognitive ease. Information is grouped logically." }
-  }
-},
+  },
   zh: {
     role: "技術產品負責人 (Technical PM)",
     nav: { overview: "總覽與數據", projects: "系統與技術", design: "設計實驗室" },
@@ -131,7 +130,7 @@ const content = {
       desc: "我相信「舒適的數據」。我的目標是透過留白與視覺階層，讓複雜的資訊變得平易近人。",
       legacy: { title: "傳統工程介面", sub: "邊框過多、文字密集", desc: "典型的工程師思維儀表板。功能齊全但令人卻步。" },
       soft: { title: "我的設計 (Soft Tech)", sub: "卡片式佈局 & 呼吸感", desc: "優先考慮認知負荷。利用柔和的視覺提示將資訊邏輯分組。" }
-    }
+    },
   },
   ja: {
     role: "テクニカル・プロダクト・オーナー",
