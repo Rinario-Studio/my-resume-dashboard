@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { X, ArrowRight, Heart, MessageCircle, Share2, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import MermaidChart from './MermaidChart';
-import { cn } from '@/lib/utils';
+import { ProjectData } from '@/types';
 
 interface EduSearchDetailProps {
     onClose: () => void;
-    data: any;
+    data: ProjectData;
 }
 
 const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, data }) => {
@@ -54,29 +55,62 @@ const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, data }) => {
                 {/* Scroll Container */}
                 <div className="h-full overflow-y-auto scrollbar-hide">
 
+                    {/* --- Hero Cover Image --- */}
+                    <div className="px-6 md:px-12 pt-24 pb-8">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="w-full aspect-video md:h-[500px] rounded-xl overflow-hidden shadow-2xl relative"
+                        >
+                            <Image
+                                src="https://placehold.co/1200x600/png?text=EduSearch+Cover"
+                                alt="EduSearch Cover"
+                                fill
+                                priority
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </motion.div>
+                    </div>
+
                     {/* --- Section A: The Why (Intro) --- */}
-                    <section className="px-8 md:px-16 py-24 md:py-32 bg-slate-50">
+                    <section className="px-8 md:px-16 pb-24 pt-10 bg-white">
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
                             variants={staggerContainer}
-                            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start"
+                            className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
                         >
-                            <motion.div variants={fadeInUp}>
+                            {/* Left Column: Title & Context */}
+                            <motion.div variants={fadeInUp} className="md:col-span-7">
                                 <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-100 rounded-full">
                                     Case Study
                                 </span>
-                                <h1 className="text-5xl md:text-6xl font-bold text-slate-900 font-serif leading-tight mb-6">
+                                <h1 className="text-5xl md:text-7xl font-bold text-slate-900 font-serif leading-tight mb-8">
                                     Redefining <br />
                                     <span className="text-blue-600">Tutor Matching.</span>
                                 </h1>
-                                <p className="text-xl font-medium text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-6">
+                                <p className="text-xl md:text-2xl font-medium text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-6 mb-10">
                                     "A self-sustaining ecosystem where trust is verified, not assumed."
                                 </p>
+
+                                {/* Project Links */}
+                                <div className="flex flex-wrap gap-4">
+                                    <a href="#" className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all hover:scale-105">
+                                        <Share2 size={18} />
+                                        Live Demo
+                                    </a>
+                                    <a href="#" className="flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all hover:scale-105">
+                                        <CheckCircle2 size={18} />
+                                        View Code
+                                    </a>
+                                </div>
                             </motion.div>
 
-                            <motion.div variants={fadeInUp} className="space-y-10">
+                            {/* Right Column: Problem & Insight */}
+                            <motion.div variants={fadeInUp} className="md:col-span-5 space-y-10 md:pt-4">
                                 <div>
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3">The Problem</h3>
                                     <p className="text-lg text-slate-700 leading-relaxed">

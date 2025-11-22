@@ -1,15 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { X, ExternalLink, Layers } from 'lucide-react';
+import { ProjectData } from '@/types';
 
 interface RinarioDetailProps {
     onClose: () => void;
-    data: {
-        title: string;
-        desc: string;
-        linkText: string;
-        gallery?: Array<{ title: string; desc: string; image: string }>;
-    };
+    data: ProjectData;
 }
 
 const RinarioDetail: React.FC<RinarioDetailProps> = ({ onClose, data }) => {

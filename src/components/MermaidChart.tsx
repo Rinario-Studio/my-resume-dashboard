@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mermaid from 'mermaid';
 
 mermaid.initialize({
@@ -14,39 +13,30 @@ interface MermaidChartProps {
 
 const MermaidChart: React.FC<MermaidChartProps> = ({ chart }) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [svgContent, setSvgContent] = useState('');
 
-    useEffect(() => {
-        if (containerRef.current) {
-            mermaid.run({
-                nodes: [containerRef.current.querySelector('.mermaid') as HTMLElement],
-            });
-        }
-    }, [chart]);
-
-    // We render a div with the class 'mermaid' containing the chart definition.
-    // mermaid.run() will pick it up and render the SVG.
-    // However, for dynamic updates in React, it's often safer to use render() API or just re-mount.
-    // A simple approach for now:
     useEffect(() => {
         const renderChart = async () => {
-            if (containerRef.current) {
-                try {
-                    containerRef.current.innerHTML = '';
-                    const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
-                    const { svg } = await mermaid.render(id, chart);
-                    containerRef.current.innerHTML = svg;
-                } catch (error) {
-                    console.error('Mermaid render error:', error);
-                    if (containerRef.current) {
-                        containerRef.current.innerHTML = '<p class="text-red-500 text-xs">Invalid Diagram</p>';
-                    }
-                }
+            if (!chart) return;
+            try {
+                const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+                const { svg } = await mermaid.render(id, chart);
+                setSvgContent(svg);
+            } catch (error) {
+                console.error('Mermaid render error:', error);
+                setSvgContent('<p class="text-red-500 text-xs">Invalid Diagram</p>');
             }
         };
         renderChart();
     }, [chart]);
 
-    return <div ref={containerRef} className="w-full h-full flex justify-center items-center" />;
+    return (
+        <div
+            ref={containerRef}
+            className="w-full h-full flex justify-center items-center mermaid-container"
+            dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+    );
 };
 
 export default MermaidChart;
