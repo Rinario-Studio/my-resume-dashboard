@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils';
 
 interface EduSearchDetailProps {
     onClose: () => void;
-    t: any; // Using any for now to avoid strict type checks on the dictionary structure, can be refined later
+    data: any;
 }
 
-const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, t }) => {
+const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, data }) => {
     // Animation variants
     const fadeInUp: Variants = {
         hidden: { opacity: 0, y: 30 },
@@ -28,13 +28,27 @@ const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, t }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-xl overflow-y-auto">
-            {/* Close Button - Sticky/Fixed */}
-            <button
-                onClick={onClose}
-                className="fixed top-6 right-6 z-50 p-3 rounded-full bg-slate-100/80 hover:bg-slate-200 text-slate-600 transition-all backdrop-blur-md shadow-sm"
+            {/* Sticky Header */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="fixed top-0 left-0 w-full h-20 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/50 flex items-center justify-between px-6 md:px-12"
             >
-                <X size={24} />
-            </button>
+                <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
+                        E
+                    </div>
+                    <span className="font-bold text-slate-900 tracking-tight">EduSearch</span>
+                </div>
+
+                {/* Close Button */}
+                <button
+                    onClick={onClose}
+                    className="p-2 rounded-full hover:bg-slate-100 text-slate-500 transition-colors"
+                >
+                    <X size={24} />
+                </button>
+            </motion.div>
 
             <div className="w-full max-w-5xl min-h-screen bg-white shadow-2xl overflow-hidden relative">
                 {/* Scroll Container */}
@@ -66,13 +80,13 @@ const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, t }) => {
                                 <div>
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3">The Problem</h3>
                                     <p className="text-lg text-slate-700 leading-relaxed">
-                                        {t.edusearch.content.proposal.problem}
+                                        {data.content.proposal.problem}
                                     </p>
                                 </div>
                                 <div>
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3">The Insight</h3>
                                     <p className="text-lg text-slate-700 leading-relaxed">
-                                        {t.edusearch.content.proposal.insight}
+                                        {data.content.proposal.insight}
                                     </p>
                                 </div>
                             </motion.div>
@@ -96,7 +110,7 @@ const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, t }) => {
                             </div>
 
                             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-inner mb-12">
-                                <MermaidChart chart={t.edusearch.content.architecture.diagram} />
+                                <MermaidChart chart={data.content.architecture.diagram} />
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

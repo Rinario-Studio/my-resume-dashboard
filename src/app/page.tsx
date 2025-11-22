@@ -30,163 +30,11 @@ import {
 } from 'recharts';
 import { cn } from '@/lib/utils';
 import EduSearchDetail from '@/components/EduSearchDetail';
+import RinarioDetail from '@/components/RinarioDetail';
+import { content } from '@/data/resume-content';
 
 // --- Data ---
-const translations = {
-  ZH: {
-    hero: {
-      name: "Rina Hsu",
-      role: "Design Engineer",
-      headline: <>Bridging Scientific Logic & <br className="hidden md:block" /><span className="text-blue-600">Creative Design.</span></>,
-      description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution."
-    },
-    science: {
-      tag: "Core",
-      title: "Scientific Rigor",
-      description: "Data Interpretation & Complex Logic Visualization."
-    },
-    edusearch: {
-      tag: "Featured Project",
-      name: "EduSearch",
-      title: "Solo-Dev Execution.",
-      subtitle: "Solo-Dev Execution.",
-      description: <>Identified market asymmetry. Built a scalable matching platform using Cloudflare D1 & Next.js.<br /><span className="font-semibold text-blue-700 mt-1 block">Full Lifecycle Ownership.</span></>,
-      cta: "View Case Study",
-      content: {
-        proposal: {
-          problem: "As a tutor, I noticed scattered resources and inefficient matching processes in the local market, leading to missed opportunities for both students and teachers.",
-          insight: "The market lacked a centralized, data-driven platform that could transparently showcase teacher credentials while maintaining privacy.",
-          solution: "I designed a self-sustaining ecosystem where teachers can build verifiable profiles and students can filter by specific needs, all powered by a low-latency edge network."
-        },
-        architecture: {
-          description: "Leveraging Cloudflare D1 for edge capability and Next.js for SSR performance, achieving a 'Zero Cost' operational model (excluding domain).",
-        },
-        features: [
-          "Real-time Teacher Filtering with sub-100ms response times.",
-          "Server-side rendered profiles for optimal SEO and shareability.",
-          "Edge-cached static assets via Cloudflare R2 for lightning-fast loads.",
-          "Automated verification workflow to ensure platform trust."
-        ]
-      }
-    },
-    tech: {
-      title: "Tech Stack",
-      subtitle: "Performance & Scalability"
-    },
-    hire: {
-      title: "Available for work",
-      subtitle: "Open for FT roles & Freelance",
-      download: "Download Resume",
-      book: "Book Consultation"
-    },
-    network: {
-      title: "Rinario Network",
-      subtitle: "AI-Augmented Static Sites"
-    }
-  },
-  EN: {
-    hero: {
-      name: "Sample Title",
-      role: "Placeholder Role",
-      headline: <>This is a placeholder <br className="hidden md:block" /><span className="text-blue-600">for English version.</span></>,
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    science: {
-      tag: "Core",
-      title: "Scientific Rigor",
-      description: "Data Interpretation & Complex Logic Visualization."
-    },
-    edusearch: {
-      tag: "Featured Project",
-      name: "EduSearch",
-      title: "Solo-Dev Execution.",
-      subtitle: "Solo-Dev Execution.",
-      description: <>Identified market asymmetry. Built a scalable matching platform using Cloudflare D1 & Next.js.<br /><span className="font-semibold text-blue-700 mt-1 block">Full Lifecycle Ownership.</span></>,
-      cta: "View Case Study",
-      content: {
-        proposal: {
-          problem: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          insight: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          solution: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        architecture: {
-          description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        },
-        features: [
-          "Excepteur sint occaecat cupidatat non proident.",
-          "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
-          "Accusantium doloremque laudantium, totam rem aperiam."
-        ]
-      }
-    },
-    tech: {
-      title: "Tech Stack",
-      subtitle: "Performance & Scalability"
-    },
-    hire: {
-      title: "Available for work",
-      subtitle: "Open for FT roles & Freelance",
-      download: "Download Resume",
-      book: "Book Consultation"
-    },
-    network: {
-      title: "Rinario Network",
-      subtitle: "AI-Augmented Static Sites"
-    }
-  },
-  JP: {
-    hero: {
-      name: "ここにタイトルが入ります",
-      role: "役職プレースホルダー",
-      headline: <>これは日本語の <br className="hidden md:block" /><span className="text-blue-600">プレースホルダーテキストです。</span></>,
-      description: "これは日本語のプレースホルダーテキストです。ここに自己紹介や経歴などの詳細な情報が入ります。"
-    },
-    science: {
-      tag: "コア",
-      title: "科学的厳密さ",
-      description: "データ解釈と複雑なロジックの可視化。"
-    },
-    edusearch: {
-      tag: "注目プロジェクト",
-      name: "EduSearch",
-      title: "単独開発の実行力",
-      subtitle: "単独開発の実行力",
-      description: <>市場の非対称性を特定。Cloudflare D1とNext.jsを使用してスケーラブルなマッチングプラットフォームを構築。<br /><span className="font-semibold text-blue-700 mt-1 block">ライフサイクル全体のオーナーシップ。</span></>,
-      cta: "ケーススタディを見る",
-      content: {
-        proposal: {
-          problem: "家庭教師として、リソースが散在し、マッチングプロセスが非効率であることを痛感しました。",
-          insight: "教師の資格を透明性を持って示しつつ、プライバシーを保護できるデータ駆動型のプラットフォームが不足していました。",
-          solution: "教師が検証可能なプロフィールを作成し、学生がニーズに合わせてフィルタリングできる、自己持続型のエコシステムを設計しました。"
-        },
-        architecture: {
-          description: "Cloudflare D1のエッジ機能とNext.jsのSSRパフォーマンスを活用し、「ゼロコスト」運用モデル（ドメインを除く）を実現。",
-        },
-        features: [
-          "100ms以下の応答時間でのリアルタイム教師フィルタリング。",
-          "SEOと共有性のためのサーバーサイドレンダリングプロフィール。",
-          "Cloudflare R2によるエッジキャッシュされた静的アセット。",
-          "プラットフォームの信頼性を確保するための自動検証ワークフロー。"
-        ]
-      }
-    },
-    tech: {
-      title: "技術スタック",
-      subtitle: "パフォーマンスとスケーラビリティ"
-    },
-    hire: {
-      title: "お仕事募集中",
-      subtitle: "フルタイム & フリーランス",
-      download: "履歴書をダウンロード",
-      book: "相談を予約する"
-    },
-    network: {
-      title: "Rinario Network",
-      subtitle: "AI強化静的サイト"
-    }
-  }
-};
+const translations = content
 
 const skillsData = [
   { subject: 'Product', A: 90, fullMark: 100 },
@@ -246,13 +94,13 @@ const TechBadge = ({ icon: Icon, label }) => (
 
 interface LanguageSwitcherProps {
   currentLang: string;
-  onToggle: (lang: string) => void;
+  onToggle: (lang: any) => void;
 }
 
 const LanguageSwitcher = ({ currentLang, onToggle }: LanguageSwitcherProps) => {
   return (
     <div className="flex items-center gap-1 p-1 rounded-full bg-white/40 backdrop-blur-md border border-slate-200/50 shadow-sm">
-      {['EN', 'ZH', 'JP'].map((l) => (
+      {['en', 'zh', 'ja'].map((l) => (
         <button
           key={l}
           onClick={(e) => { e.stopPropagation(); onToggle(l); }}
@@ -263,7 +111,7 @@ const LanguageSwitcher = ({ currentLang, onToggle }: LanguageSwitcherProps) => {
               : "text-slate-500 hover:text-slate-700"
           )}
         >
-          {l}
+          {l.toUpperCase()}
         </button>
       ))}
     </div>
@@ -273,8 +121,8 @@ const LanguageSwitcher = ({ currentLang, onToggle }: LanguageSwitcherProps) => {
 // --- Main Page ---
 
 export default function BentoPortfolio() {
-  const [selectedId, setSelectedId] = useState(null);
-  const [lang, setLang] = useState('ZH');
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [lang, setLang] = useState<'zh' | 'en' | 'ja'>('zh');
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -285,36 +133,19 @@ export default function BentoPortfolio() {
     }
   }, [selectedId]);
 
-  const t = translations[lang as keyof typeof translations];
+  const t = content[lang];
+  const eduSearchData = t.projects.find(p => p.id === 1);
 
   // Construct projects array based on current language
   const projects = [
     {
       id: 'edusearch',
-      title: t.edusearch.title,
-      subtitle: t.edusearch.subtitle,
-      description: t.edusearch.description,
-      highlight: 'Full Lifecycle Ownership.', // This could also be translated if needed
-      tags: ['Cloudflare D1', 'Next.js', 'Zero Cost Arch.'],
-      content: {
-        proposal: t.edusearch.content.proposal,
-        architecture: {
-          description: t.edusearch.content.architecture.description,
-          diagram: `
-            graph LR
-              Client[Client] -->|HTTPS| Next[Next.js SSR]
-              Next -->|API| Worker[Cloudflare Workers]
-              Worker -->|SQL| D1[(Cloudflare D1)]
-              Worker -->|Cache| R2[(Cloudflare R2)]
-              style Client fill:#f9f9f9,stroke:#333,stroke-width:2px
-              style Next fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
-              style Worker fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-              style D1 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-              style R2 fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
-          `
-        },
-        features: t.edusearch.content.features
-      }
+      title: eduSearchData?.title,
+      subtitle: eduSearchData?.subtitle,
+      description: eduSearchData?.desc,
+      highlight: 'Full Lifecycle Ownership.',
+      tags: eduSearchData?.tech,
+      content: eduSearchData?.content
     }
   ];
 
@@ -324,12 +155,17 @@ export default function BentoPortfolio() {
     <div className="min-h-screen bg-[#f5f5f7] p-4 md:p-8 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]">
 
+        {/* Fixed Language Switcher */}
+        <div className="fixed top-4 right-4 z-50">
+          <LanguageSwitcher currentLang={lang} onToggle={setLang} />
+        </div>
+
         {/* 1. Hero Section (2x1) */}
         <BentoCard colSpan={2} className="justify-between bg-gradient-to-br from-white to-slate-50 relative">
-          {/* Language Switcher - Relocated to Bottom Right */}
-          <div className="absolute bottom-6 right-6 z-20">
+          {/* Language Switcher - Relocated to Fixed Position */}
+          {/* <div className="absolute bottom-6 right-6 z-20">
             <LanguageSwitcher currentLang={lang} onToggle={setLang} />
-          </div>
+          </div> */}
 
           <div className="flex justify-between items-start">
             <div className="flex flex-col gap-1">
@@ -412,18 +248,18 @@ export default function BentoPortfolio() {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="px-2 py-1 rounded-md bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider">
-                  {t.edusearch.tag}
+                  {eduSearchData?.tag}
                 </span>
-                <span className="text-xs font-bold text-blue-900 uppercase tracking-wider">{t.edusearch.name}</span>
+                <span className="text-xs font-bold text-blue-900 uppercase tracking-wider">{eduSearchData?.name}</span>
               </div>
-              <motion.h3 layoutId="edusearch-title" className="text-3xl font-bold text-slate-900 mb-2 font-serif">{t.edusearch.title}</motion.h3>
+              <motion.h3 layoutId="edusearch-title" className="text-3xl font-bold text-slate-900 mb-2 font-serif">{eduSearchData?.title}</motion.h3>
               <p className="text-slate-600 max-w-sm mb-6">
-                {t.edusearch.description}
+                {eduSearchData?.desc}
               </p>
             </div>
 
             <div className="flex items-center gap-2 text-sm font-bold text-blue-700 group-hover:gap-3 transition-all">
-              {t.edusearch.cta} <ArrowUpRight size={16} />
+              {eduSearchData?.cta} <ArrowUpRight size={16} />
             </div>
           </motion.div>
 
@@ -487,7 +323,11 @@ export default function BentoPortfolio() {
         </BentoCard>
 
         {/* 6. Rinario Content Network (Small Feature) */}
-        <BentoCard className="justify-between group" href="https://rinario.com">
+        <BentoCard
+          className="justify-between group cursor-pointer"
+          onClick={() => setSelectedId('rinario')}
+          layoutId="rinario-card"
+        >
           <div>
             <div className="flex items-center justify-between mb-2">
               <Cpu size={20} className="text-indigo-500" />
@@ -512,7 +352,13 @@ export default function BentoPortfolio() {
       {/* Expanded View Modal */}
       <AnimatePresence>
         {selectedId === 'edusearch' && (
-          <EduSearchDetail onClose={() => setSelectedId(null)} t={t} />
+          <EduSearchDetail onClose={() => setSelectedId(null)} data={eduSearchData} />
+        )}
+        {selectedId === 'rinario' && (
+          <RinarioDetail
+            onClose={() => setSelectedId(null)}
+            data={t.projects.find(p => p.id === 2)}
+          />
         )}
       </AnimatePresence>
     </div>
