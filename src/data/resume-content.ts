@@ -15,7 +15,12 @@ export const content = {
       name: "Rina Hsu",
       role: "Design Engineer",
       headline: "Bridging Scientific Logic & Creative Design.",
-      description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution."
+      description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution.",
+      social: {
+        github: "https://github.com/yourusername",
+        linkedin: "https://linkedin.com/in/yourusername",
+        email: "mailto:your@email.com"
+      }
     },
     science: {
       tag: "Core",
@@ -135,7 +140,12 @@ export const content = {
       name: "Rina Hsu",
       role: "技術產品負責人",
       headline: "架構師思維。連結商業目標與技術實踐的橋樑。",
-      description: "我負責規劃系統架構與定義使用者體驗，並策劃 AI 輔助的工作流程以加速開發，同時確保架構的完整性。"
+      description: "我負責規劃系統架構與定義使用者體驗，並策劃 AI 輔助的工作流程以加速開發，同時確保架構的完整性。",
+      social: {
+        github: "https://github.com/yourusername",
+        linkedin: "https://linkedin.com/in/yourusername",
+        email: "mailto:your@email.com"
+      }
     },
     science: {
       tag: "核心",
@@ -255,7 +265,12 @@ export const content = {
       name: "Rina Hsu",
       role: "テクニカル・プロダクト・オーナー",
       headline: "アーキテクト思考。ビジネス目標と技術実装の架け橋。",
-      description: "システムの全体設計とUX定義を行い、AIを活用したワークフローを構築して開発を加速させつつ、アーキテクチャの整合性を担保します。"
+      description: "システムの全体設計とUX定義を行い、AIを活用したワークフローを構築して開発を加速させつつ、アーキテクチャの整合性を担保します。",
+      social: {
+        github: "https://github.com/yourusername",
+        linkedin: "https://linkedin.com/in/yourusername",
+        email: "mailto:your@email.com"
+      }
     },
     science: {
       tag: "コア",
@@ -369,7 +384,7 @@ export const content = {
     }
   }
 }
-  
+
 
 
 

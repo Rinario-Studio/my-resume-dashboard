@@ -177,10 +177,16 @@ export default function BentoPortfolio() {
               </p>
             </div>
             <div className="flex gap-2 mr-0">
-              {[Github, Linkedin, Mail].map((Icon, i) => (
+              {[
+                { Icon: Github, href: t.hero.social.github },
+                { Icon: Linkedin, href: t.hero.social.linkedin },
+                { Icon: Mail, href: t.hero.social.email }
+              ].map(({ Icon, href }, i) => (
                 <motion.a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 hover:text-slate-900 transition-colors"
                 >
