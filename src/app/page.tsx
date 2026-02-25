@@ -124,6 +124,19 @@ export default function BentoPortfolio() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [lang, setLang] = useState<'zh' | 'en' | 'ja'>('zh');
 
+  // Load language preference from localStorage
+  useEffect(() => {
+    const savedLang = localStorage.getItem('resume-lang');
+    if (savedLang === 'zh' || savedLang === 'en' || savedLang === 'ja') {
+      setLang(savedLang);
+    }
+  }, []);
+
+  const handleLangChange = (newLang: 'zh' | 'en' | 'ja') => {
+    setLang(newLang);
+    localStorage.setItem('resume-lang', newLang);
+  };
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (selectedId) {
@@ -157,7 +170,7 @@ export default function BentoPortfolio() {
 
         {/* Fixed Language Switcher */}
         <div className="fixed top-4 right-4 z-50">
-          <LanguageSwitcher currentLang={lang} onToggle={setLang} />
+          <LanguageSwitcher currentLang={lang} onToggle={handleLangChange} />
         </div>
 
         {/* 1. Hero Section (2x1) */}
