@@ -37,7 +37,7 @@ export const content = {
       download: "Download Resume",
       book: "Book Consultation",
       resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
-      bookLink: "mailto:chhsu2003@gmail.com"
+      bookLink: "https://calendar.app.google/5jArxiuV2rniShnbA"
     },
     network: {
       title: "Rinario Network",
@@ -164,7 +164,7 @@ export const content = {
       download: "下載履歷",
       book: "預約諮詢",
       resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
-      bookLink: "mailto:chhsu2003@gmail.com"
+      bookLink: "https://calendar.app.google/5jArxiuV2rniShnbA"
     },
     network: {
       title: "Rinario Network",
@@ -291,7 +291,7 @@ export const content = {
       download: "履歴書をダウンロード",
       book: "相談を予約する",
       resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
-      bookLink: "mailto:chhsu2003@gmail.com"
+      bookLink: "https://calendar.app.google/5jArxiuV2rniShnbA"
     },
     network: {
       title: "Rinario Network",
