@@ -17,7 +17,7 @@ export const content = {
       headline: "Bridging Scientific Logic & Creative Design.",
       description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution.",
       social: {
-        github: "https://github.com/yourusername",
+        github: "https://github.com/Riina92",
         linkedin: "https://linkedin.com/in/rinahsu",
         email: "mailto:chhsu2003@gmail.com"
       }
@@ -35,7 +35,8 @@ export const content = {
       title: "Available for work",
       subtitle: "Open for FT roles & Freelance",
       download: "Download Resume",
-      book: "Book Consultation"
+      book: "Book Consultation",
+      resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing"
     },
     network: {
       title: "Rinario Network",
@@ -160,7 +161,8 @@ export const content = {
       title: "開放接案",
       subtitle: "全職或自由接案",
       download: "下載履歷",
-      book: "預約諮詢"
+      book: "預約諮詢",
+      resumeLink: "https://your-google-drive-link-here"
     },
     network: {
       title: "Rinario Network",
@@ -285,7 +287,8 @@ export const content = {
       title: "お仕事募集中",
       subtitle: "フルタイム & フリーランス",
       download: "履歴書をダウンロード",
-      book: "相談を予約する"
+      book: "相談を予約する",
+      resumeLink: "https://your-google-drive-link-here"
     },
     network: {
       title: "Rinario Network",

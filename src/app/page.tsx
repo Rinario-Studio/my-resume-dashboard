@@ -318,10 +318,15 @@ export default function BentoPortfolio() {
           </div>
 
           <div className="w-full flex flex-col gap-2">
-            <button className="w-full py-2.5 px-4 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+            <a
+              href={t.hire.resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-4 bg-slate-900 text-white rounded-xl text-sm font-bold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+            >
               <Download size={16} />
               {t.hire.download}
-            </button>
+            </a>
             <button className="w-full py-2.5 px-4 bg-white border border-slate-300 text-slate-700 rounded-xl text-sm font-bold hover:bg-slate-50 transition-colors">
               {t.hire.book}
             </button>
