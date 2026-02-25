@@ -36,7 +36,8 @@ export const content = {
       subtitle: "Open for FT roles & Freelance",
       download: "Download Resume",
       book: "Book Consultation",
-      resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing"
+      resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
+      bookLink: "mailto:chhsu2003@gmail.com"
     },
     network: {
       title: "Rinario Network",
@@ -143,9 +144,9 @@ export const content = {
       headline: "架構師思維。連結商業目標與技術實踐的橋樑。",
       description: "我負責規劃系統架構與定義使用者體驗，並策劃 AI 輔助的工作流程以加速開發，同時確保架構的完整性。",
       social: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        email: "mailto:your@email.com"
+        github: "https://github.com/Riina92",
+        linkedin: "https://linkedin.com/in/rinahsu",
+        email: "mailto:chhsu2003@gmail.com"
       }
     },
     science: {
@@ -162,7 +163,8 @@ export const content = {
       subtitle: "全職或自由接案",
       download: "下載履歷",
       book: "預約諮詢",
-      resumeLink: "https://your-google-drive-link-here"
+      resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
+      bookLink: "mailto:chhsu2003@gmail.com"
     },
     network: {
       title: "Rinario Network",
@@ -269,9 +271,9 @@ export const content = {
       headline: "アーキテクト思考。ビジネス目標と技術実装の架け橋。",
       description: "システムの全体設計とUX定義を行い、AIを活用したワークフローを構築して開発を加速させつつ、アーキテクチャの整合性を担保します。",
       social: {
-        github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        email: "mailto:your@email.com"
+        github: "https://github.com/Riina92",
+        linkedin: "https://linkedin.com/in/rinahsu",
+        email: "mailto:chhsu2003@gmail.com"
       }
     },
     science: {
@@ -288,7 +290,8 @@ export const content = {
       subtitle: "フルタイム & フリーランス",
       download: "履歴書をダウンロード",
       book: "相談を予約する",
-      resumeLink: "https://your-google-drive-link-here"
+      resumeLink: "https://drive.google.com/file/d/1TYO6DF8j2XhPdfRHl_sx2PKDQisDPwKB/view?usp=sharing",
+      bookLink: "mailto:chhsu2003@gmail.com"
     },
     network: {
       title: "Rinario Network",

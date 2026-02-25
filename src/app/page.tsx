@@ -327,9 +327,14 @@ export default function BentoPortfolio() {
               <Download size={16} />
               {t.hire.download}
             </a>
-            <button className="w-full py-2.5 px-4 bg-white border border-slate-300 text-slate-700 rounded-xl text-sm font-bold hover:bg-slate-50 transition-colors">
+            <a
+              href={t.hire.bookLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-4 bg-white border border-slate-300 text-slate-700 rounded-xl text-sm font-bold hover:bg-slate-50 transition-colors flex items-center justify-center"
+            >
               {t.hire.book}
-            </button>
+            </a>
           </div>
         </BentoCard>
 
