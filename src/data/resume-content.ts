@@ -18,7 +18,7 @@ export const content = {
       description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution.",
       social: {
         github: "https://github.com/Riina92",
-        linkedin: "https://linkedin.com/in/rinahsu",
+        linkedin: "https://linkedin.com/in/rina-hsu",
         email: "mailto:chhsu2003@gmail.com"
       }
     },
@@ -114,7 +114,7 @@ export const content = {
         linkText: "Visit Site",
         highlights: null,
         gallery: [
-          { title: "Project Alpha", desc: "A static blog generator.", image: "/images/alpha.jpg" },
+          { title: "Blog project", desc: "A records of my life, and my thoughts.", image: "/images/alpha.jpg" },
           { title: "Project Beta", desc: "E-commerce landing page.", image: "/images/beta.jpg" },
           { title: "Project Gamma", desc: "Portfolio template.", image: "/images/gamma.jpg" }
         ]
@@ -145,7 +145,7 @@ export const content = {
       description: "我負責規劃系統架構與定義使用者體驗，並策劃 AI 輔助的工作流程以加速開發，同時確保架構的完整性。",
       social: {
         github: "https://github.com/Riina92",
-        linkedin: "https://linkedin.com/in/rinahsu",
+        linkedin: "https://linkedin.com/in/rina-hsu",
         email: "mailto:chhsu2003@gmail.com"
       }
     },
@@ -272,7 +272,7 @@ export const content = {
       description: "システムの全体設計とUX定義を行い、AIを活用したワークフローを構築して開発を加速させつつ、アーキテクチャの整合性を担保します。",
       social: {
         github: "https://github.com/Riina92",
-        linkedin: "https://linkedin.com/in/rinahsu",
+        linkedin: "https://linkedin.com/in/rina-hsu",
         email: "mailto:chhsu2003@gmail.com"
       }
     },
