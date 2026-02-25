@@ -18,8 +18,8 @@ export const content = {
       description: "Transforming real-world problems into deployed products. From NTU Atmospheric Science to Full-stack execution.",
       social: {
         github: "https://github.com/yourusername",
-        linkedin: "https://linkedin.com/in/yourusername",
-        email: "mailto:your@email.com"
+        linkedin: "https://linkedin.com/in/rinahsu",
+        email: "mailto:chhsu2003@gmail.com"
       }
     },
     science: {
