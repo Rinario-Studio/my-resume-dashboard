@@ -93,7 +93,7 @@ const EduSearchDetail: React.FC<EduSearchDetailProps> = ({ onClose, data }) => {
                                     <span className="text-blue-600">Tutor Matching.</span>
                                 </h1>
                                 <p className="text-xl md:text-2xl font-medium text-slate-600 leading-relaxed border-l-4 border-blue-500 pl-6 mb-10">
-                                    "A self-sustaining ecosystem where trust is verified, not assumed."
+                                    &quot;A self-sustaining ecosystem where trust is verified, not assumed.&quot;
                                 </p>
 
                                 {/* Project Links */}
